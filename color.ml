@@ -10,7 +10,7 @@ doesn't pass all the unit tests. No need to debug it though. You'll be
 replacing it wholesale with a simpler implementation. *)
 
 (* 8-bit RGB channel colors *)
-type color = { red : int; green : int; blue : int } ;;
+type color = int * int * int ;;
 
 (* Some standard color names *)
 type color_name =
@@ -39,7 +39,7 @@ let blue (c : color) : int =
 
 (* color_named name -- Returns the color (as RGB representation)
    corresponding to the color name *)
-let color_named (name : color_name) : color = 
+let color_named (name : color_name) : color =
   match name with
   | Red ->    to_color 255    0    0
   | Green ->  to_color   0  255    0
